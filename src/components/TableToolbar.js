@@ -1,21 +1,21 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
+import Typography from '@mui/material/Typography';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
 import Popover from './Popover';
 import TableFilter from './TableFilter';
 import TableViewCol from './TableViewCol';
 import TableSearch from './TableSearch';
-import SearchIcon from '@material-ui/icons/Search';
-import DownloadIcon from '@material-ui/icons/CloudDownload';
-import PrintIcon from '@material-ui/icons/Print';
-import ViewColumnIcon from '@material-ui/icons/ViewColumn';
-import FilterIcon from '@material-ui/icons/FilterList';
+import SearchIcon from '@mui/icons-material/Search';
+import DownloadIcon from '@mui/icons-material/CloudDownload';
+import PrintIcon from '@mui/icons-material/Print';
+import ViewColumnIcon from '@mui/icons-material/ViewColumn';
+import FilterIcon from '@mui/icons-material/FilterList';
 import ReactToPrint, { PrintContextConsumer } from 'react-to-print';
 import find from 'lodash.find';
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@mui/styles/withStyles';
 import { createCSVDownload, downloadCSV } from '../utils';
-import MuiTooltip from '@material-ui/core/Tooltip';
+import MuiTooltip from '@mui/material/Tooltip';
 
 export const defaultToolbarStyles = theme => ({
   root: {
@@ -65,7 +65,7 @@ export const defaultToolbarStyles = theme => ({
     marginTop: '10px',
     marginRight: '8px',
   },
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     titleRoot: {},
     titleText: {
       fontSize: '16px',
@@ -82,7 +82,7 @@ export const defaultToolbarStyles = theme => ({
       textAlign: 'right',
     },
   },
-  [theme.breakpoints.down('xs')]: {
+  [theme.breakpoints.down('sm')]: {
     root: {
       display: 'block',
       '@media print': {
@@ -357,7 +357,8 @@ class TableToolbar extends React.Component {
                 buttonRef={el => (this.searchButton = el)}
                 classes={{ root: this.getActiveIcon(classes, 'search') }}
                 disabled={options.search === 'disabled'}
-                onClick={this.handleSearchIconClick}>
+                onClick={this.handleSearchIconClick}
+                size="large">
                 <SearchIconComponent />
               </IconButton>
             </Tooltip>
@@ -369,7 +370,8 @@ class TableToolbar extends React.Component {
                 aria-label={downloadCsv}
                 classes={{ root: classes.icon }}
                 disabled={options.download === 'disabled'}
-                onClick={this.handleCSVDownload}>
+                onClick={this.handleCSVDownload}
+                size="large">
                 <DownloadIconComponent />
               </IconButton>
             </Tooltip>
@@ -386,7 +388,8 @@ class TableToolbar extends React.Component {
                           aria-label={print}
                           disabled={options.print === 'disabled'}
                           onClick={handlePrint}
-                          classes={{ root: classes.icon }}>
+                          classes={{ root: classes.icon }}
+                          size="large">
                           <PrintIconComponent />
                         </IconButton>
                       </Tooltip>
@@ -408,7 +411,8 @@ class TableToolbar extends React.Component {
                     aria-label={viewColumns}
                     classes={{ root: this.getActiveIcon(classes, 'viewcolumns') }}
                     disabled={options.viewColumns === 'disabled'}
-                    onClick={this.setActiveIcon.bind(null, 'viewcolumns')}>
+                    onClick={this.setActiveIcon.bind(null, 'viewcolumns')}
+                    size="large">
                     <ViewColumnIconComponent />
                   </IconButton>
                 </Tooltip>
@@ -437,7 +441,8 @@ class TableToolbar extends React.Component {
                     aria-label={filterTable}
                     classes={{ root: this.getActiveIcon(classes, 'filter') }}
                     disabled={options.filter === 'disabled'}
-                    onClick={this.setActiveIcon.bind(null, 'filter')}>
+                    onClick={this.setActiveIcon.bind(null, 'filter')}
+                    size="large">
                     <FilterIconComponent />
                   </IconButton>
                 </Tooltip>
