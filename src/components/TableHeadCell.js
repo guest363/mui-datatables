@@ -1,14 +1,15 @@
-import Button from '@mui/material/Button';
-import clsx from 'clsx';
 import HelpIcon from '@mui/icons-material/Help';
-import MuiTooltip from '@mui/material/Tooltip';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import TableCell from '@mui/material/TableCell';
 import TableSortLabel from '@mui/material/TableSortLabel';
-import useColumnDrop from '../hooks/useColumnDrop.js';
+import MuiTooltip from '@mui/material/Tooltip';
 import makeStyles from '@mui/styles/makeStyles';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { useDrag } from 'react-dnd';
+import React from 'react';
+import useColumnDrop from '../hooks/useColumnDrop.js';
 
 const useStyles = makeStyles(
   theme => ({
@@ -125,12 +126,8 @@ const TableHeadCell = ({
   };
 
   const [{ opacity }, dragRef, preview] = useDrag({
-    item: {
-      type: 'HEADER',
-      colIndex: index,
-      headCellRefs: draggableHeadCellRefs,
-    },
-    begin: monitor => {
+    type: 'HEADER',
+    item: monitor => {
       setTimeout(() => {
         setHintTooltipOpen(false);
         setSortTooltipOpen(false);
