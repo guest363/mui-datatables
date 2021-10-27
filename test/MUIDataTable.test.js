@@ -1,20 +1,16 @@
-import React from 'react';
-import { spy, stub } from 'sinon';
-import { mount, shallow } from 'enzyme';
+import Chip from '@material-ui/core/Chip';
 import { assert, expect } from 'chai';
-import cloneDeep from 'lodash.clonedeep';
-import MUIDataTable from '../src/MUIDataTable';
+import { mount, shallow } from 'enzyme';
+import cloneDeep from 'lodash/clonedeep';
+import { spy, stub } from 'sinon';
+import Cities from '../examples/component/cities';
 import TableFilterList from '../src/components/TableFilterList';
 import TablePagination from '../src/components/TablePagination';
 import TableToolbar from '../src/components/TableToolbar';
 import TableToolbarSelect from '../src/components/TableToolbarSelect';
+import MUIDataTable from '../src/MUIDataTable';
 import getTextLabels from '../src/textLabels';
-import Chip from '@material-ui/core/Chip';
-import Cities from '../examples/component/cities';
 import { getCollatorComparator } from '../src/utils';
-import TableFooter from '@material-ui/core/TableFooter';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
 
 describe('<MUIDataTable />', function() {
   const tableId = 'tableID';

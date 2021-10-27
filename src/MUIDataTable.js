@@ -3,14 +3,16 @@ import MuiTable from '@mui/material/Table';
 import MuiTooltip from '@mui/material/Tooltip';
 import withStyles from '@mui/styles/withStyles';
 import clsx from 'clsx';
-import assignwith from 'lodash.assignwith';
-import cloneDeep from 'lodash.clonedeep';
-import find from 'lodash.find';
-import isEqual from 'lodash.isequal';
-import isUndefined from 'lodash.isundefined';
-import merge from 'lodash.merge';
+import assignwith from 'lodash/assignwith';
+import cloneDeep from 'lodash/clonedeep';
+import find from 'lodash/find';
+import isEqual from 'lodash/isequal';
+import isUndefined from 'lodash/isundefined';
+import merge from 'lodash/merge';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import DefaultTableBody from './components/TableBody';
 import DefaultTableFilter from './components/TableFilter';
 import DefaultTableFilterList from './components/TableFilterList';
@@ -21,8 +23,6 @@ import DefaultTableToolbar from './components/TableToolbar';
 import DefaultTableToolbarSelect from './components/TableToolbarSelect';
 import getTextLabels from './textLabels';
 import { buildMap, getCollatorComparator, getPageValue, sortCompare, warnDeprecated, warnInfo } from './utils';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
 
 const defaultTableStyles = theme => ({
   root: {},

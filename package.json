@@ -46,8 +46,8 @@
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.1",
     "@babel/register": "^7.10.1",
-    "@mui/material": "^5.0.4",
     "@mui/icons-material": "^5.0.4",
+    "@mui/material": "^5.0.4",
     "@rollup/plugin-babel": "5.0.2",
     "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
@@ -92,24 +92,16 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   },
-
   "dependencies": {
     "@babel/runtime-corejs3": "^7.12.1",
     "clsx": "^1.1.1",
-    "lodash.assignwith": "^4.2.0",
-    "lodash.clonedeep": "^4.5.0",
-    "lodash.debounce": "^4.0.8",
-    "lodash.find": "^4.6.0",
-    "lodash.get": "^4.4.2",
-    "lodash.isequal": "^4.5.0",
-    "lodash.isundefined": "^3.0.1",
-    "lodash.memoize": "^4.1.2",
-    "lodash.merge": "^4.6.2",
+    "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "react-dnd": "^14.0.4",
     "react-dnd-html5-backend": "^14.0.2",
     "react-sortable-tree-patch-react-17": "^2.9.0",
-    "react-to-print": "^2.14.0"
+    "react-to-print": "^2.14.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "side-effects": false,
   "nyc": {

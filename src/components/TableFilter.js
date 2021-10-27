@@ -8,14 +8,14 @@ import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import ListItemText from '@mui/material/ListItemText';
 import MenuItem from '@mui/material/MenuItem';
-import PropTypes from 'prop-types';
-import React from 'react';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import clsx from 'clsx';
 import withStyles from '@mui/styles/withStyles';
-import cloneDeep from 'lodash.clonedeep';
+import clsx from 'clsx';
+import cloneDeep from 'lodash/clonedeep';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export const defaultFilterStyles = theme => ({
   root: {
