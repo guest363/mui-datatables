@@ -8,7 +8,7 @@ import Toolbar from '@mui/material/Toolbar';
 import MuiTooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import withStyles from '@mui/styles/withStyles';
-import find from 'lodash/find';
+import { find } from 'lodash';
 import React from 'react';
 import ReactToPrint, { PrintContextConsumer } from 'react-to-print';
 import { createCSVDownload, downloadCSV } from '../utils';

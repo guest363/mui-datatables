@@ -13,7 +13,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import withStyles from '@mui/styles/withStyles';
 import clsx from 'clsx';
-import cloneDeep from 'lodash/clonedeep';
+import { cloneDeep } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 

@@ -3,12 +3,7 @@ import MuiTable from '@mui/material/Table';
 import MuiTooltip from '@mui/material/Tooltip';
 import withStyles from '@mui/styles/withStyles';
 import clsx from 'clsx';
-import assignwith from 'lodash/assignwith';
-import cloneDeep from 'lodash/clonedeep';
-import find from 'lodash/find';
-import isEqual from 'lodash/isequal';
-import isUndefined from 'lodash/isundefined';
-import merge from 'lodash/merge';
+import { assignWith, cloneDeep, find, isEqual, isUndefined, merge } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { DndProvider } from 'react-dnd';
@@ -367,7 +362,7 @@ class MUIDataTable extends React.Component {
       props.options.tableId = (Math.random() + '').replace(/\./, '');
     }
 
-    this.options = assignwith(options, props.options, (objValue, srcValue, key) => {
+    this.options = assignWith(options, props.options, (objValue, srcValue, key) => {
       // Merge any default options that are objects, as they will be overwritten otherwise
       if (key === 'textLabels' || key === 'downloadOptions') return merge(objValue, srcValue);
       return;
